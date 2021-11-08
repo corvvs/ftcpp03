@@ -1,5 +1,5 @@
-#ifndef CPP03_EX01_SCAVTRAP_HPP_
-# define CPP03_EX01_SCAVTRAP_HPP_
+#ifndef CPP03_EX02_SCAVTRAP_HPP_
+# define CPP03_EX02_SCAVTRAP_HPP_
 
 # include "ClapTrap.hpp"
 
