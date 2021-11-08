@@ -27,3 +27,11 @@ ScavTrap::~ScavTrap() {
         << " has been recalled."
         << std::endl;
 }
+
+void    ScavTrap::guardGate() {
+    std::cout
+        << "ScavTrap "
+        << name_
+        << " has been changed its form into Gate keeper mode."
+        << std::endl;
+}

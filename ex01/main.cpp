@@ -17,4 +17,6 @@ int main() {
     me.takeDamage(1);
     me.beRepaired(10001);
     me.takeDamage(10000);
+    me.guardGate();
+    nameless.guardGate();
 }

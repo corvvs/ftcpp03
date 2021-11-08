@@ -10,6 +10,8 @@ class ScavTrap: public ClapTrap {
         ~ScavTrap();
         ScavTrap(const ScavTrap &from);
         ScavTrap& operator=(const ScavTrap &rhs);
+
+        void    guardGate();
 };
 
 #endif

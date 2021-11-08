@@ -1,7 +1,10 @@
 #include "ClapTrap.hpp" 
 
 ClapTrap::ClapTrap():
-    name_("<nameless>"), hitpoints_(10), energy_points_(10), attack_damage_(0)
+    name_("<nameless>"),
+    hitpoints_(10),
+    energy_points_(10),
+    attack_damage_(0)
 {
     std::cout
         << "a nameless ClapTrap has arrived."
@@ -9,7 +12,10 @@ ClapTrap::ClapTrap():
 }
 
 ClapTrap::ClapTrap(const std::string& name):
-    name_(name), hitpoints_(10), energy_points_(10), attack_damage_(0)
+    name_(name),
+    hitpoints_(10),
+    energy_points_(10),
+    attack_damage_(0)
 {
     std::cout
         << "a ClapTrap "
