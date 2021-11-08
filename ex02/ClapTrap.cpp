@@ -1,7 +1,14 @@
 #include "ClapTrap.hpp" 
 
-ClapTrap::ClapTrap():
-    name_("<nameless>"), hitpoints_(10), energy_points_(10), attack_damage_(0)
+const unsigned int ClapTrap::kInitialHitpoints = 10;
+const unsigned int ClapTrap::kInitialEnergyPoints = 10;
+const unsigned int ClapTrap::kAttackDamage = 0;
+
+ClapTrap::ClapTrap(void):
+    name_("<nameless>"),
+    hitpoints_(ClapTrap::kInitialHitpoints),
+    energy_points_(ClapTrap::kInitialEnergyPoints),
+    attack_damage_(ClapTrap::kAttackDamage)
 {
     std::cout
         << "a nameless ClapTrap has arrived."
@@ -9,7 +16,10 @@ ClapTrap::ClapTrap():
 }
 
 ClapTrap::ClapTrap(const std::string& name):
-    name_(name), hitpoints_(10), energy_points_(10), attack_damage_(0)
+    name_(name),
+    hitpoints_(ClapTrap::kInitialHitpoints),
+    energy_points_(ClapTrap::kInitialEnergyPoints),
+    attack_damage_(ClapTrap::kAttackDamage)
 {
     std::cout
         << "a ClapTrap "
@@ -63,7 +73,7 @@ void    ClapTrap::attack(std::string const & target) {
         << name_
         << " attacks "
         << target
-        << ", causing "
+        << ", caused "
         << attack_damage_
         << " points of damage!"
         << std::endl;
@@ -116,4 +126,12 @@ void    ClapTrap::beRepaired(unsigned int amount) {
             << " hitpoints."
             << std::endl;
     }
+}
+
+void    ClapTrap::say(void) {
+    std::cout
+        << "name: " << name_ << std::endl
+        << "HP: " << hitpoints_ << std::endl
+        << "EP: " << energy_points_ << std::endl
+        << "AD: " << attack_damage_ << std::endl;
 }

@@ -5,9 +5,9 @@
 
 class ClapTrap {
     public:
-        ClapTrap();
+        ClapTrap(void);
         ClapTrap(const std::string& name);
-        ~ClapTrap();
+        ~ClapTrap(void);
         ClapTrap(const ClapTrap &from);
         ClapTrap& operator=(const ClapTrap &rhs);
 
@@ -19,8 +19,13 @@ class ClapTrap {
         void    attack(std::string const & target);
         void    takeDamage(unsigned int amount);
         void    beRepaired(unsigned int amount);
+        virtual void    say(void);
 
-    private:
+        static const unsigned int kInitialHitpoints;
+        static const unsigned int kInitialEnergyPoints;
+        static const unsigned int kAttackDamage;
+
+    protected:
         const std::string   name_;
         unsigned int    hitpoints_;
         unsigned int    energy_points_;

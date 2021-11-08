@@ -1,18 +1,22 @@
 #include "FragTrap.hpp"
 
+const unsigned int FragTrap::kInitialHitpoints = 100;
+const unsigned int FragTrap::kInitialEnergyPoints = 100;
+const unsigned int FragTrap::kAttackDamage = 30;
+
 FragTrap::FragTrap(): ClapTrap() {
-    hitpoints_ = 100;
-    energy_points_ = 100;
-    attack_damage_ = 30;
+    hitpoints_ = FragTrap::kInitialHitpoints;
+    energy_points_ = FragTrap::kInitialEnergyPoints;
+    attack_damage_ = FragTrap::kAttackDamage;
     std::cout
         << "a nameless FragTrap has arrived."
         << std::endl;
 }
 
 FragTrap::FragTrap(const std::string& name): ClapTrap(name) {
-    hitpoints_ = 100;
-    energy_points_ = 100;
-    attack_damage_ = 30;
+    hitpoints_ = FragTrap::kInitialHitpoints;
+    energy_points_ = FragTrap::kInitialEnergyPoints;
+    attack_damage_ = FragTrap::kAttackDamage;
     std::cout
         << "a FragTrap "
         << name_

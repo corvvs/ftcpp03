@@ -10,7 +10,6 @@ ClapTrap::ClapTrap(void):
     energy_points_(ClapTrap::kInitialEnergyPoints),
     attack_damage_(ClapTrap::kAttackDamage)
 {
-    std::cout << "ClapTrap::ClapTrap()" << std::endl;
     std::cout
         << "a nameless ClapTrap has arrived."
         << std::endl;
@@ -22,7 +21,6 @@ ClapTrap::ClapTrap(const std::string& name):
     energy_points_(ClapTrap::kInitialEnergyPoints),
     attack_damage_(ClapTrap::kAttackDamage)
 {
-    std::cout << "ClapTrap::ClapTrap(const std::string& name)" << std::endl;
     std::cout
         << "a ClapTrap "
         << name_
@@ -75,7 +73,7 @@ void    ClapTrap::attack(std::string const & target) {
         << name_
         << " attacks "
         << target
-        << ", causing "
+        << ", caused "
         << attack_damage_
         << " points of damage!"
         << std::endl;

@@ -1,18 +1,22 @@
 #include "ScavTrap.hpp" 
 
+const unsigned int ScavTrap::kInitialHitpoints = 100;
+const unsigned int ScavTrap::kInitialEnergyPoints = 50;
+const unsigned int ScavTrap::kAttackDamage = 20;
+
 ScavTrap::ScavTrap(): ClapTrap() {
-    hitpoints_ = 100;
-    energy_points_ = 50;
-    attack_damage_ = 20;
+    hitpoints_ = ScavTrap::kInitialHitpoints;
+    energy_points_ = ScavTrap::kInitialEnergyPoints;
+    attack_damage_ = ScavTrap::kAttackDamage;
     std::cout
         << "a nameless ScavTrap has arrived."
         << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string& name): ClapTrap(name) {
-    hitpoints_ = 100;
-    energy_points_ = 50;
-    attack_damage_ = 20;
+    hitpoints_ = ScavTrap::kInitialHitpoints;
+    energy_points_ = ScavTrap::kInitialEnergyPoints;
+    attack_damage_ = ScavTrap::kAttackDamage;
     std::cout
         << "a ScavTrap "
         << name_

@@ -8,7 +8,6 @@ FragTrap::FragTrap(): ClapTrap() {
     hitpoints_ = FragTrap::kInitialHitpoints;
     energy_points_ = FragTrap::kInitialEnergyPoints;
     attack_damage_ = FragTrap::kAttackDamage;
-    std::cout << "FragTrap::FragTrap()" << std::endl;
     std::cout
         << "a nameless FragTrap has arrived."
         << std::endl;
@@ -18,7 +17,6 @@ FragTrap::FragTrap(const std::string& name): ClapTrap(name) {
     hitpoints_ = FragTrap::kInitialHitpoints;
     energy_points_ = FragTrap::kInitialEnergyPoints;
     attack_damage_ = FragTrap::kAttackDamage;
-    std::cout << "FragTrap::FragTrap(const std::string& name)" << std::endl;
     std::cout
         << "a FragTrap "
         << name_
