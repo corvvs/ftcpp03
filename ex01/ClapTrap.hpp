@@ -1,5 +1,5 @@
-#ifndef CPP03_EX00_CLAPTRAP_HPP_
-# define CPP03_EX00_CLAPTRAP_HPP_
+#ifndef CPP03_EX01_CLAPTRAP_HPP_
+# define CPP03_EX01_CLAPTRAP_HPP_
 
 #include <iostream>
 
@@ -20,7 +20,7 @@ class ClapTrap {
         void    takeDamage(unsigned int amount);
         void    beRepaired(unsigned int amount);
 
-    private:
+    protected:
         const std::string   name_;
         unsigned int    hitpoints_;
         unsigned int    energy_points_;
