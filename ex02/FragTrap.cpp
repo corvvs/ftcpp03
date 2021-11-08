@@ -1,47 +1,47 @@
-#include "ScavTrap.hpp" 
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap(): ClapTrap() {
+FragTrap::FragTrap(): ClapTrap() {
     hitpoints_ = 100;
-    energy_points_ = 50;
-    attack_damage_ = 20;
+    energy_points_ = 100;
+    attack_damage_ = 30;
     std::cout
-        << "a nameless ScavTrap has arrived."
+        << "a nameless FragTrap has arrived."
         << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string& name): ClapTrap(name) {
+FragTrap::FragTrap(const std::string& name): ClapTrap(name) {
     hitpoints_ = 100;
-    energy_points_ = 50;
-    attack_damage_ = 20;
+    energy_points_ = 100;
+    attack_damage_ = 30;
     std::cout
-        << "a ScavTrap "
+        << "a FragTrap "
         << name_
         << " has arrived."
         << std::endl;
 }
 
-ScavTrap::~ScavTrap() {
+FragTrap::~FragTrap() {
     std::cout
-        << "ScavTrap "
+        << "FragTrap "
         << name_
         << " has been recalled."
         << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &from):
+FragTrap::FragTrap(const FragTrap &from):
     ClapTrap(from)
 {
     hitpoints_ = from.hitpoints_;
     energy_points_ = from.energy_points_;
     attack_damage_ = from.attack_damage_;
     std::cout
-        << "a ScavTrap "
+        << "a FragTrap "
         << name_
         << " has duplicated."
         << std::endl;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap &rhs) {
+FragTrap& FragTrap::operator=(const FragTrap &rhs) {
     (std::string)name_ = rhs.name_;
     hitpoints_ = rhs.hitpoints_;
     energy_points_ = rhs.energy_points_;
@@ -49,10 +49,10 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &rhs) {
     return *this;
 }
 
-void    ScavTrap::guardGate() {
+void    FragTrap::highFivesGuys(void) {
     std::cout
-        << "ScavTrap "
+        << "FragTrap "
         << name_
-        << " has been changed its form into Gate keeper mode."
+        << " sayed: \"Please Please Please Please Please Please high five with me me me me!!\""
         << std::endl;
 }
