@@ -1,9 +1,5 @@
 #include "ScavTrap.hpp" 
 
-const unsigned int ScavTrap::kInitialHitpoints = 100;
-const unsigned int ScavTrap::kInitialEnergyPoints = 50;
-const unsigned int ScavTrap::kAttackDamage = 20;
-
 ScavTrap::ScavTrap(): ClapTrap() {
     hitpoints_ = ScavTrap::kInitialHitpoints;
     energy_points_ = ScavTrap::kInitialEnergyPoints;
@@ -53,10 +49,30 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &rhs) {
     return *this;
 }
 
+void    ScavTrap::attack(std::string const & target) {
+    std::cout
+        << "ScavTrap "
+        << name_
+        << " flamed "
+        << target
+        << " with "
+        << attack_damage_
+        << " points of damage!"
+        << std::endl;
+}
+
 void    ScavTrap::guardGate() {
     std::cout
         << "ScavTrap "
         << name_
         << " has been changed its form into Gate keeper mode."
         << std::endl;
+}
+
+void    ScavTrap::initials(void) {
+    std::cout
+        << "[ScavTrap Initials]" << std::endl
+        << "Initial HP: " << kInitialHitpoints << std::endl
+        << "Initial EP: " << kInitialEnergyPoints << std::endl
+        << "Initial AD: " << kAttackDamage << std::endl;
 }

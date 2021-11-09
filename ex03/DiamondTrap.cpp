@@ -1,24 +1,24 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap()
-    : ClapTrap(), ScavTrap(), FragTrap(),
-    name_(ClapTrap::name_ + "_crap_name")
+    : ClapTrap("<nameless>" "_crap_name"), ScavTrap(), FragTrap(),
+    name_("<nameless>")
 {
-    hitpoints_ = FragTrap::kInitialHitpoints;
-    energy_points_ = ScavTrap::kInitialEnergyPoints;
-    attack_damage_ = FragTrap::kAttackDamage;
+    hitpoints_ = DiamondTrap::kInitialHitpoints;
+    energy_points_ = DiamondTrap::kInitialEnergyPoints;
+    attack_damage_ = DiamondTrap::kAttackDamage;
     std::cout
         << "a nameless DiamondTrap has arrived."
         << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const std::string& name)
-    : ClapTrap(name), ScavTrap(), FragTrap(name),
-    name_(ClapTrap::name_ + "_crap_name")
+    : ClapTrap(name + "_crap_name"), ScavTrap(name), FragTrap(name),
+    name_(name)
 {
-    hitpoints_ = FragTrap::kInitialHitpoints;
-    energy_points_ = ScavTrap::kInitialEnergyPoints;
-    attack_damage_ = FragTrap::kAttackDamage;
+    hitpoints_ = DiamondTrap::kInitialHitpoints;
+    energy_points_ = DiamondTrap::kInitialEnergyPoints;
+    attack_damage_ = DiamondTrap::kAttackDamage;
     std::cout
         << "a DiamondTrap "
         << name_
@@ -65,8 +65,20 @@ void    DiamondTrap::whoAmI(void) {
 
 }
 
+void    DiamondTrap::attack(std::string const & target) {
+    this->ScavTrap::attack(target);
+}
+
 void    DiamondTrap::say(void) {
     std::cout
         << "DiamondTrap name: " << name_ << std::endl;
     ClapTrap::say();
+}
+
+void    DiamondTrap::initials(void) {
+    std::cout
+        << "[DiamondTrap Initials]" << std::endl
+        << "Initial HP: " << kInitialHitpoints << std::endl
+        << "Initial EP: " << kInitialEnergyPoints << std::endl
+        << "Initial AD: " << kAttackDamage << std::endl;
 }

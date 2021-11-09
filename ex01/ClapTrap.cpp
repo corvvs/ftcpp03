@@ -1,9 +1,5 @@
 #include "ClapTrap.hpp" 
 
-const unsigned int ClapTrap::kInitialHitpoints = 10;
-const unsigned int ClapTrap::kInitialEnergyPoints = 10;
-const unsigned int ClapTrap::kAttackDamage = 0;
-
 ClapTrap::ClapTrap(void):
     name_("<nameless>"),
     hitpoints_(ClapTrap::kInitialHitpoints),
@@ -71,9 +67,9 @@ void    ClapTrap::attack(std::string const & target) {
     std::cout
         << "ClapTrap "
         << name_
-        << " attacks "
+        << " attacked "
         << target
-        << ", caused "
+        << ", and caused "
         << attack_damage_
         << " points of damage!"
         << std::endl;
@@ -134,4 +130,12 @@ void    ClapTrap::say(void) {
         << "HP: " << hitpoints_ << std::endl
         << "EP: " << energy_points_ << std::endl
         << "AD: " << attack_damage_ << std::endl;
+}
+
+void    ClapTrap::initials(void) {
+    std::cout
+        << "[ClapTrap Initials]" << std::endl
+        << "Initial HP: " << kInitialHitpoints << std::endl
+        << "Initial EP: " << kInitialEnergyPoints << std::endl
+        << "Initial AD: " << kAttackDamage << std::endl;
 }

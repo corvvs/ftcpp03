@@ -1,10 +1,24 @@
 #include "ClapTrap.hpp"
 
+void    say(const std::string& str) {
+    std::cout << std::endl << str << std::endl << std::endl;
+}
+
 int main() {
+    ClapTrap::initials();
+
+    say("[ Construct Objects ]");
     ClapTrap nameless = ClapTrap();
     ClapTrap me("yokawada");
 
+    say("[ Say ]");
+    nameless.say();
+    me.say();
+
+    say("[ Attack ]");
     me.attack("42Tokyo");
+
+    say("[ Taking Damage, and Reparied ]");
     me.takeDamage(0);
     me.takeDamage(1);
     me.takeDamage(10000);
@@ -17,4 +31,10 @@ int main() {
     me.takeDamage(1);
     me.beRepaired(10001);
     me.takeDamage(10000);
+
+    say("[ Say Again ]");
+    nameless.say();
+    me.say();
+
+    say("[ Finish. ]");
 }

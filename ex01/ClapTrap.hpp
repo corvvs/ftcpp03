@@ -16,14 +16,16 @@ class ClapTrap {
         unsigned int    getEnergyPoints(void) const;
         unsigned int    getAttackDamage(void) const;
 
-        void    attack(std::string const & target);
-        void    takeDamage(unsigned int amount);
-        void    beRepaired(unsigned int amount);
+        virtual void    attack(std::string const & target);
+        void            takeDamage(unsigned int amount);
+        void            beRepaired(unsigned int amount);
         virtual void    say(void);
 
-        static const unsigned int kInitialHitpoints;
-        static const unsigned int kInitialEnergyPoints;
-        static const unsigned int kAttackDamage;
+        static const unsigned int kInitialHitpoints = 10;
+        static const unsigned int kInitialEnergyPoints = 10;
+        static const unsigned int kAttackDamage = 0;
+
+        static void initials(void);
 
     protected:
         const std::string   name_;

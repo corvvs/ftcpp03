@@ -1,9 +1,5 @@
 #include "FragTrap.hpp"
 
-const unsigned int FragTrap::kInitialHitpoints = 100;
-const unsigned int FragTrap::kInitialEnergyPoints = 100;
-const unsigned int FragTrap::kAttackDamage = 30;
-
 FragTrap::FragTrap(): ClapTrap() {
     hitpoints_ = FragTrap::kInitialHitpoints;
     energy_points_ = FragTrap::kInitialEnergyPoints;
@@ -53,10 +49,30 @@ FragTrap& FragTrap::operator=(const FragTrap &rhs) {
     return *this;
 }
 
+void    FragTrap::attack(std::string const & target) {
+    std::cout
+        << "FragTrap "
+        << name_
+        << " bombed "
+        << target
+        << ". the target has taken "
+        << attack_damage_
+        << " points of damage!"
+        << std::endl;
+}
+
 void    FragTrap::highFivesGuys(void) {
     std::cout
         << "FragTrap "
         << name_
         << " sayed: \"Please Please Please Please Please Please high five with me me me me!!\""
         << std::endl;
+}
+
+void    FragTrap::initials(void) {
+    std::cout
+        << "[FragTrap Initials]" << std::endl
+        << "Initial HP: " << kInitialHitpoints << std::endl
+        << "Initial EP: " << kInitialEnergyPoints << std::endl
+        << "Initial AD: " << kAttackDamage << std::endl;
 }

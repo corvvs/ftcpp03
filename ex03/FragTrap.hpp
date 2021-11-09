@@ -11,11 +11,14 @@ class FragTrap: public virtual ClapTrap {
         FragTrap(const FragTrap &from);
         FragTrap& operator=(const FragTrap &rhs);
 
+        void    attack(std::string const & target);
         void    highFivesGuys(void);
 
-        static const unsigned int kInitialHitpoints;
-        static const unsigned int kInitialEnergyPoints;
-        static const unsigned int kAttackDamage;
+        static const unsigned int kInitialHitpoints = 100;
+        static const unsigned int kInitialEnergyPoints = 100;
+        static const unsigned int kAttackDamage = 30;
+
+        static void initials(void);
 };
 
 #endif
