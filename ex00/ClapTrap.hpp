@@ -25,7 +25,7 @@ class ClapTrap {
         static const unsigned int kInitialEnergyPoints;
         static const unsigned int kAttackDamage;
 
-    protected:
+    private:
         const std::string   name_;
         unsigned int    hitpoints_;
         unsigned int    energy_points_;
